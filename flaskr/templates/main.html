@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <head>
+        <title>{% block page_name %}{{ page_name }}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+</head>
+
+<body>
+    <!-- The below tag is using Bulma CSS. Try replacing line 14 with line 13. -->
+    <!-- <div class="has-text-success-dark is-size-4  has-text-weight-medium"> -->
+    <div>
+        <a href="{{ url_for('home') }}">
+            Home
+        </a>
+        &nbsp;&nbsp;
+        <a href="{{ url_for('all_pages') }}">
+            Pages
+        </a>
+        &nbsp;&nbsp;
+        <a href="{{ url_for('about') }}">
+            About
+        </a>
+    </div>
+
+    <!-- The below tag is using Bulma CSS. Try replacing line 30 with line 29. -->
+    <!-- <div class="content"> -->
+    <div>
+        {% block content %}{{ page_content }}{% endblock %}
+    </div>
+
+</body>
+
+</html>
